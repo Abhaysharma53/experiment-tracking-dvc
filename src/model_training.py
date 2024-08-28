@@ -14,8 +14,8 @@ y = df['placed']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
 
-n_estimators = 100
-max_depth = 15
+n_estimators = 130
+max_depth = 8
 
 rf = RandomForestClassifier(n_estimators = n_estimators, max_depth = max_depth)
 
@@ -30,4 +30,6 @@ with Live(save_dvc_exp = True) as live:
 
     live.log_param('n_estimator', n_estimators)
     live.log_param('max_depth', max_depth)
+
+#every run of the code will be considered as a separate experiment
 
